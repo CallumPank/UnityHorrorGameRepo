@@ -46,9 +46,9 @@ public class EnemyAI : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, sightRange)) {
             if (hit.collider.tag == "Player") {
-                Debug.Log ("player seen");
+               Debug.Log ("player seen");
                 chasing = true;
-            }
+           }
         }
 
         if (chasing) {

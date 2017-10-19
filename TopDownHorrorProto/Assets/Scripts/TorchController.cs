@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TorchController : MonoBehaviour
 {
+
+    bool SeeEnemyAi;
+
 	public float minAngle = 10;
 	public float maxAngle = 42;
 
@@ -28,6 +31,8 @@ public class TorchController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+
 		//Changes Torch Angle to 10 (Focus Beam Maybe?) Open = E
 		if (Input.GetButtonDown ("Open")) {
 			torch.spotAngle = minAngle;
@@ -46,6 +51,11 @@ public class TorchController : MonoBehaviour
             PointTorchForward();
         }
     }
+
+    void OnTriggerEnter(Collider other) {
+        Debug.Log(gameObject.name + "Was Triggered By" + other.gameObject.name);
+    }
+
 
     void PointTorchForward()
     {

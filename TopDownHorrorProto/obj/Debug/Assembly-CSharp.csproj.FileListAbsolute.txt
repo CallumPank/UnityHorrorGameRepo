@@ -29,3 +29,6 @@ C:\Users\CP192723\Downloads\UnityHorrorGameRepo\TopDownHorrorProto\Temp\bin\Debu
 C:\Users\CP192723\Downloads\UnityHorrorGameRepo\TopDownHorrorProto\Temp\bin\Debug\UnityEngine.VR.xml
 C:\Users\CP192723\Downloads\UnityHorrorGameRepo\TopDownHorrorProto\obj\Debug\Assembly-CSharp.dll
 C:\Users\CP192723\Downloads\UnityHorrorGameRepo\TopDownHorrorProto\obj\Debug\Assembly-CSharp.pdb
+D:\Users\Callum\Desktop\UnityHorrorGameRepo\TopDownHorrorProto\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Users\Callum\Desktop\UnityHorrorGameRepo\TopDownHorrorProto\obj\Debug\Assembly-CSharp.dll
+D:\Users\Callum\Desktop\UnityHorrorGameRepo\TopDownHorrorProto\obj\Debug\Assembly-CSharp.pdb

@@ -36,10 +36,6 @@ public class PlayerController : MonoBehaviour
 
 				RaycastHit hit;
 
-				if(RaycastHit EnemyAI){
-					
-				}
-
 				if (Physics.Raycast (ray, out hit, 100f, movementMask)) {
 					motor.MoveToPoint (hit.point);
 					//Stop focusing on objects
