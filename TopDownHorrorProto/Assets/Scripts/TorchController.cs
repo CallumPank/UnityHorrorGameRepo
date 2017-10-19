@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class TorchController : MonoBehaviour
 {
-    [SerializeField]
+	public float minAngle = 10;
+	public float maxAngle = 42;
+
+	[SerializeField]
     Light torch;
 
     [SerializeField]
@@ -18,12 +21,22 @@ public class TorchController : MonoBehaviour
     void Start()
     {
         motor = GetComponent<PlayerMotor>();
+		torch.type = LightType.Spot;
         motor.SetStandardSpeed();
     }
 
     // Update is called once per frame
     void Update()
     {
+		//Changes Torch Angle to 10 (Focus Beam Maybe?) Open = E
+		if (Input.GetButtonDown ("Open")) {
+			torch.spotAngle = minAngle;
+		}
+
+		if (Input.GetButtonUp ("Open")) {
+			PointTorchForward();
+		}
+
         if (Input.GetButtonDown("Jump"))
         {
             PointTorchBackward();
@@ -50,8 +63,8 @@ public class TorchController : MonoBehaviour
 
     void RotateTorch()
     {
-        Vector3 v = torch.gameObject.transform.eulerAngles;
-        v.y += 180f;
-        torch.gameObject.transform.eulerAngles = v;
+        Vector3 vec = torch.gameObject.transform.eulerAngles;
+        vec.y += 180f;
+        torch.gameObject.transform.eulerAngles = vec;
     }
 }
