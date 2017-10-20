@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerMotor : MonoBehaviour
 {
-   
+	public float Stamina = 10.0f;
     NavMeshAgent agent;
 
     [SerializeField]

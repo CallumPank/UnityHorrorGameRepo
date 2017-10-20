@@ -5,23 +5,21 @@ using UnityEngine.UI;
 
 public class StaminaBar : MonoBehaviour {
 
+	public PlayerMotor StaminaMotor;
     public Image _bar;
-    public RectTransform Button;
 
     public float _StaminaValue = 0;
 	
 	// Update is called once per frame
 	void Update () {
-        StaminaChange(_StaminaValue);
+		StaminaChange(StaminaMotor.Stamina);
 	}
 
-    void StaminaChange(float healthValue) {
+	//Stamina Bar fills up to 180 degrees depending on fill amount
+    void StaminaChange(float StaminaValue) {
 
-        float amount = (healthValue/100.0f) * 180.0f/360;
+        float amount = (StaminaValue/100.0f) * 180.0f/360;
         _bar.fillAmount = amount;
-        float buttonAngle = amount * 360;
-        Button.localEulerAngles = new Vector3(0, 0, -buttonAngle); 
-
 
     }
 }
