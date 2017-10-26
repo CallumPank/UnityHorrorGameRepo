@@ -6,10 +6,10 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerMotor : MonoBehaviour
 {
+
 	public float stamina = 100.0f;
-	public float staminaDepletion = 5.0f;
-	public float staminaRegen = 3.0f;
-	bool running = false;
+	public float staminaRegen = 0.01f;
+	public float staminaDepress = 0.003f;
 
     NavMeshAgent agent;
 
@@ -59,15 +59,13 @@ public class PlayerMotor : MonoBehaviour
         {
             remainingSprintTime += Time.deltaTime;
             remainingSprintTime = Mathf.Clamp(remainingSprintTime, 0f, maxSprintTime);
+			stamina = remainingSprintTime;
         }
 
-		if(Input.GetKeyDown(KeyCode.LeftShift))
+		if (Input.GetKey(KeyCode.LeftShift) && stamina >= staminaDepress)
 		{
-			stamina -= Time.deltaTime / staminaDepletion;
-			if(stamina > 0)
-			{
-				running = true;
-			}
+			stamina -= staminaDepress;
+
 		}
         #endregion
 

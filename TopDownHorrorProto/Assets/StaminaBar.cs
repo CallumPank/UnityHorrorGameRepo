@@ -12,13 +12,13 @@ public class StaminaBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		StaminaChange(StaminaMotor.Stamina);
+		StaminaChange(StaminaMotor.stamina);
 	}
 
 	//Stamina Bar fills up to 180 degrees depending on fill amount
     void StaminaChange(float StaminaValue) {
 
-        float amount = (StaminaValue/100.0f) * 180.0f/360;
+        float amount = (StaminaValue/1.0f) * 180.0f/360;
         _bar.fillAmount = amount;
 
     }
